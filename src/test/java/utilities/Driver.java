@@ -29,12 +29,9 @@ public class Driver {
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ANDROIDVERSION);
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
-            caps.setCapability("appPackage","com.ailebutcem");
-            caps.setCapability("appActivity","com.ailebutcem.MainActivity");
-            /* eger bu capability FALSE olarak kullanilirsa,uygulama test edildikten sonra her seferinde kullanici datalari temizlenir ve
-            uygulamanin ilk install haline dondurulur
-             */
-            // eger true olursa kullanicili bilgileri test bittikten sonra sifirlan ve tercihler kaydedilir.Islemlere kaldiginiz yerden devam edilir
+            caps.setCapability("appPackage","com.dogan.arabam");
+            caps.setCapability("appActivity","com.dogan.arabam.presentation.feature.home.HomeActivity");
+            caps.setCapability(MobileCapabilityType.NO_RESET,false);
 
             if (ConfigReader.getProperty("platformName").equals("Android")) {
                 assert appiumServerURL != null;
