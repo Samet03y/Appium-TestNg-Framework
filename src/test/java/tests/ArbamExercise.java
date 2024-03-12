@@ -1,5 +1,4 @@
 package tests;
-
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
@@ -11,7 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.ArabamPage;
 import utilities.Driver;
-
+import utilities.ReusableMethods;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
@@ -43,6 +42,7 @@ public class ArbamExercise {
         // Arabam sayfayasına donüldüğü goğrulanır
         Assert.assertTrue(page.garajButton.isDisplayed());
         // İlan ara butonuna tıklanıp motosiklet seçilir
+
         action.press(PointOption.point(322,1694)).release().perform();
         action.press(PointOption.point(210,791)).release().perform();
         // Asya markasının tüm modelleri listelenir

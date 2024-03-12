@@ -27,11 +27,10 @@ public class ArabamTest {
         page.garajButton.click();
         TouchAction action = new TouchAction<>(driver);
         Thread.sleep(1000);
-        for (int i=0; i<3; i++) {
-            ReusableMethods.scrollScreenMethod(100, 460, 600, 5, 468, 1000);
+        for (int i=0; i<4; i++) {
+            ReusableMethods.scrollScreenMethod(100, 460, 600, 55, 468, 1000);
         }
-            action.press(PointOption.point(550,1530)).release().perform();
-        Thread.sleep(3000);
+        ReusableMethods.koordinatTiklamaMethodu(550,1530,1000);
     // Garaj sayfasına geçildiği doğrulanır
         String sonucText= driver.findElementByXPath("(//*[@resource-id='com.dogan.arabam:id/navigation_bar_item_small_label_view'])[3]").getText();
         System.out.println(sonucText);
@@ -43,11 +42,12 @@ public class ArabamTest {
         System.out.println(sonucText);
         Assert.assertTrue(sonucText.contains("Garaj"),sonucText);
     // İlan ara butonuna tıklanıp motosiklet seçilir
-        action.press(PointOption.point(319,1709)).release().perform();
-        action.press(PointOption.point(251,788)).release().perform();
+        ReusableMethods.koordinatTiklamaMethodu(322,1694,1000);
+        ReusableMethods.koordinatTiklamaMethodu(210,791,1000);
+
     // Asya markasının tüm modelleri listelenir
-        action.press(PointOption.point(83,1269)).release().perform();
-        action.press(PointOption.point(106,310)).release().perform();
+        ReusableMethods.koordinatTiklamaMethodu(83,1269,1000);
+        ReusableMethods.koordinatTiklamaMethodu(106,310,1000);
     // İlk aracın fiyat bilgisi yazdırılır
         sonucText= driver.findElementByXPath("//*[@resource-id='com.dogan.arabam:id/tvPrice']").getText();
         System.out.println(sonucText);
